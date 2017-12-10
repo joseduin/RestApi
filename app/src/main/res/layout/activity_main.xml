@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="foxhound.postman.MainActivity"
+    android:id="@+id/rootMain">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Scroll -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Content -->
+            <RelativeLayout
+                android:paddingTop="@dimen/fiveDp"
+                android:layout_marginLeft="@dimen/twentyDp"
+                android:layout_marginRight="@dimen/twentyDp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- URL -->
+                <LinearLayout
+                    android:id="@+id/contentUrlRequest"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/combo_request"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:ems="10"
+                        android:layout_weight="1" />
+
+                    <EditText
+                        android:id="@+id/url_request"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:scrollHorizontally="true"
+                        android:layout_weight="1"
+                        android:hint="@string/edit_text_url"
+                        android:inputType="textUri" />
+
+                </LinearLayout>
+                <!-- URL END -->
+                <!-- Request Content -->
+                <LinearLayout
+                    android:id="@+id/contentRequest"
+                    android:layout_below="@+id/contentUrlRequest"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- Token -->
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/token"/>
+
+                        <EditText
+                            android:id="@+id/token_request"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:layout_weight="1"
+                            android:maxLines="1"
+                            android:scrollHorizontally="true"
+                            android:hint="@string/edit_text_token"
+                            android:inputType="none" />
+
+                    </LinearLayout>
+                    <!-- Token END -->
+
+                    <!-- Body -->
+                    <LinearLayout
+                        android:id="@+id/bodyContent"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/body"/>
+
+                        <EditText
+                            style="@style/textMultiLine"
+                            android:id="@+id/body_request"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="@string/edit_text_body"
+                            android:inputType="textMultiLine" />
+
+                    </LinearLayout>
+                    <!-- Body END -->
+
+                </LinearLayout>
+                <!-- Request Content END -->
+                <Button
+                    android:id="@+id/boton_request"
+                    style="@style/botonPrincipal"
+                    android:layout_below="@+id/contentRequest"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_request"/>
+
+                <!-- Response Content -->
+                <RelativeLayout
+                    android:id="@+id/response_content"
+                    android:layout_below="@+id/boton_request"
+                    android:layout_marginTop="@dimen/fiveDp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- Status -->
+                    <LinearLayout
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            style="@style/textBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/status"/>
+
+                        <TextView
+                            android:id="@+id/status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/fiveDp"
+                            android:layout_marginRight="@dimen/fiveDp"
+                            android:text="@string/status"/>
+
+                    </LinearLayout>
+                    <!-- Status END -->
+                    <EditText
+                        style="@style/textMultiLine"
+                        android:id="@+id/body_response"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/edit_text_body"
+                        android:inputType="textMultiLine" />
+
+                    <!-- Token Response -->
+                    <LinearLayout
+                        android:layout_below="@id/body_response"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/token"/>
+
+                        <EditText
+                            android:id="@+id/token_response"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:maxLines="1"
+                            android:layout_weight="1"
+                            android:enabled="false"
+                            android:inputType="none" />
+
+                        <Button
+                            style="@style/botonPrincipal"
+                            android:id="@+id/copy_it"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/copy_ti"/>
+
+                    </LinearLayout>
+                    <!-- Token Response END -->
+
+                </RelativeLayout>
+                <!-- Response Content End -->
+
+            </RelativeLayout>
+            <!-- Content END -->
+
+        </ScrollView>
+        <!-- Scroll END -->
+
+        <!-- Footer -->
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/powered" />
+
+            <TextView
+                style="@style/textBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/fiveDp"
+                android:text="@string/fox" />
+
+        </LinearLayout>
+        <!-- Footer END -->
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Ocelot Postman</string>
+    <string name="powered">Powered by</string>
+    <string name="fox">FoxHound</string>
+    <string name="heroku_url">https://fox-hound.herokuapp.com/</string>
+    <string name="edit_text_url">Enter request URL</string>
+    <string name="button_request">Send</string>
+    <string name="token">Token:</string>
+    <string name="edit_text_token">Enter Token Auth</string>
+    <string name="body">Body:</string>
+    <string name="edit_text_body">Enter Body Request</string>
+    <string name="status">Status:</string>
+    <string name="copy_ti">copy it</string>
+    <string name="auth">X-Auth-Token</string>
+
+</resources>
